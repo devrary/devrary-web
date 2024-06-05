@@ -1,9 +1,17 @@
 import React from 'react'
 
-const BookDetailPage = () => {
+type Props = {
+  params: {
+    id: string;
+  }
+}
+
+const BookDetailPage = ({ params }: Props) => {
+  const { id } = params; 
+
   return (
     <div>
-      
+      {id}
     </div>
   )
 }
