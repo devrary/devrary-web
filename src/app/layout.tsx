@@ -11,8 +11,8 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "RESISTER.LOG",
-  description: "Welcome to resister-boy's logging site.",
+  title: "Devrary",
+  description: "Welcome to Devrary.",
 };
 
 export default function RootLayout({

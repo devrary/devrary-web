@@ -1,0 +1,17 @@
+@use '@/settings/styles/color.scss' as *;
+
+html[data-theme='light'] {
+  --PRIMARY: #{$PRIMARY};
+  --LIGHT: #{$LIGHT};
+  --DARK: #{$DARK};
+  --GRAY-1: #{$LIGHT-GRAY-1};
+  --GRAY-2: #{$LIGHT-GRAY-2};
+}
+
+html[data-theme='dark'] {
+  --PRIMARY: #{$PRIMARY};
+  --LIGHT: #{$DARK};
+  --DARK: #{$LIGHT};
+  --GRAY-1: #{$DARK-GRAY-1};
+  --GRAY-2: #{$DARK-GRAY-2};
+}
