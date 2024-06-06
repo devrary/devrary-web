@@ -1,13 +1,90 @@
 'use client'
-import React from 'react'
+import React, { Fragment, useCallback, useState } from 'react'
 import styles from '@/app/(auth)/login/page.module.scss'
 import classNames from 'classnames/bind'
+import { ILoginInfo } from '@/interface/data/auth'
+import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import Logo from '@/assets/Logo.png'
+import Spinner from '@/components/loader/spinner/Spinner'
+import { COLOR } from '@/styles/COLOR'
+import BaseInput from '@/components/input/baseInput/BaseInput'
+import { CiMail } from "react-icons/ci";
+import { CiLock } from "react-icons/ci";
+import BaseButton from '@/components/button/baseButton/BaseButton'
 
 const cn = classNames.bind(styles)
 
 const LoginClientPage = () => {
+  const router = useRouter();
+  const [loginInfo, setLoginInfo] = useState<ILoginInfo>({email: '', password: ''})
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [autoLogin, setAutoLogin] = useState<boolean>(false);
+
+  const redirectUser = useCallback(() => {
+    router.push('/')
+  }, [])
+
+  const userLogin = useCallback((event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    setIsLoading(true)
+
+  }, [])
+
   return (
-    <section></section>
+    <Fragment>
+      {isLoading && <Spinner type={'basic'} strokeColor={COLOR.PRIMARY} width='40' />}
+      <section className={cn('container')}>
+        <div className={cn('logo-container')}>
+          <h1>
+            <Image
+              src={Logo}
+              alt='Devrary'
+              width={1280}
+              height={1280}
+              priority
+              className={cn('logo')}
+            />
+          </h1>
+          <h3 className={cn('logo-text')}>DEVRARY</h3>
+        </div>
+        <form onSubmit={userLogin} className={cn('form-container')}>
+          <div className={cn('input-container')}>
+            <BaseInput
+              id='email'
+              type='email'
+              label='이메일'
+              labelVisible={true}
+              placeholder='이메일을 입력해주세요'
+              value={loginInfo.email}
+              onChange={(event) => setLoginInfo({ ...loginInfo, email: event.target.value })}
+            >
+              <CiMail size={22} color='grey' />
+            </BaseInput>
+          </div>
+          <div className={cn('input-container')}>
+            <BaseInput
+              id='password'
+              type='password'
+              label='비밀번호'
+              labelVisible={true}
+              placeholder='비밀번호를 입력해주세요'
+              value={loginInfo.password}
+              onChange={(event) => setLoginInfo({ ...loginInfo, password: event.target.value })}
+            >
+              <CiLock size={22} color='grey' />
+            </BaseInput>
+          </div>
+          <div className={cn('button-container')}>
+            <BaseButton
+              name='로그인'
+              onClick={() => {}}
+            />
+            
+          </div>
+        </form>
+      </section>
+    </Fragment>
   )
 }
 

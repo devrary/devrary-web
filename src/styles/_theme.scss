@@ -1,4 +1,4 @@
-@use '@/settings/styles/color.scss' as *;
+@use '@/styles/color.scss' as *;
 
 html[data-theme='light'] {
   --PRIMARY: #{$PRIMARY};
