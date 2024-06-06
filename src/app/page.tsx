@@ -6,7 +6,7 @@ const cn = classNames.bind(styles)
 
 const HomePage = () => {
   return (
-    <main>Hello, World</main>
+    <main></main>
   )
 }
 
