@@ -1,7 +1,10 @@
 'use client';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import modalSlice from '@/state/slice/modalSlice';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  modal: modalSlice
+});
 
 const store = configureStore({
   reducer: rootReducer,
