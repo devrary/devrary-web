@@ -12,5 +12,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .image {
+        width: 3.24rem;
+        height: 3.24rem;
+      }
+
+      .logo-text {
+        font-size: 1.8rem;
+        color: var(--PRIMARY);
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: .6rem;
+      }
+    }
   }
 }
