@@ -1,0 +1,35 @@
+.container {
+  width: 27.5rem;
+  height: 3.65rem;
+  position: relative;
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, calc(-100% + -.2rem));
+  }
+
+  .input {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--GRAY-1);
+    padding-left: 3.6rem;
+    outline: none;
+
+    &:focus {
+      border: 2px solid var(--PRIMARY);
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(1rem, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
