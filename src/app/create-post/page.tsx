@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateClientPage from '@/app/create/CreateClientPage'
+import CreateClientPage from '@/app/create-post/CreateClientPage'
 
 const CreatePage = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserDetailClient = () => {
+const UserDetailClientPage = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const UserDetailClient = () => {
   )
 }
 
-export default UserDetailClient
+export default UserDetailClientPage
