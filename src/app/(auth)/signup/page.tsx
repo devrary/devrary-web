@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+import SignUpClientPage from '@/app/(auth)/signup/SignUpClient';
 
 const SignUpPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <SignUpClientPage />;
+};
 
-export default SignUpPage
+export default SignUpPage;

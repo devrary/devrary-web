@@ -1,19 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
   params: {
     id: string;
-  }
-}
+  };
+};
 
 const BookDetailPage = ({ params }: Props) => {
-  const { id } = params; 
+  const { id } = params;
 
-  return (
-    <div>
-      {id}
-    </div>
-  )
-}
+  return <div>{id}</div>;
+};
 
-export default BookDetailPage
+export default BookDetailPage;

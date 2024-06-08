@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ForumPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default ForumPage
+export default ForumPage;

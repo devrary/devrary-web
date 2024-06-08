@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ProfileClient = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default ProfileClient
+export default ProfileClient;
