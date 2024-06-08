@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import '@/styles/globals.scss';
-import { Session } from "next-auth";
-import NextAuthProvider from "@/provider/NextAuthProvider";
-import ReduxProvider from "@/provider/ReduxProvider";
-import BaseProvider from "@/provider";
+import { Session } from 'next-auth';
+import NextAuthProvider from '@/provider/NextAuthProvider';
+import ReduxProvider from '@/provider/ReduxProvider';
+import BaseProvider from '@/provider';
 
 export const viewport = {
   width: 'device-width',
@@ -11,8 +11,8 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "RESISTER.LOG",
-  description: "Welcome to resister-boy's logging site.",
+  title: 'Devrary',
+  description: 'Welcome to Devrary.',
 };
 
 export default function RootLayout({
@@ -29,6 +29,7 @@ export default function RootLayout({
           <ReduxProvider>
             <BaseProvider>
               {children}
+              <div id="modal-root" />
             </BaseProvider>
           </ReduxProvider>
         </NextAuthProvider>
