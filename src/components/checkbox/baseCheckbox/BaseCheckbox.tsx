@@ -28,7 +28,7 @@ const BaseCheckbox = ({
         <BaseTooltip
           position={{
             top: 24,
-            left: -5
+            left: -5,
           }}
           orientation={orientation}
           message={message}

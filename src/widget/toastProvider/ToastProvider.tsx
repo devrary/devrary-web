@@ -1,7 +1,9 @@
+'use client';
 import React from 'react';
 
 const ToastProvider = () => {
-  return <div></div>;
+  return;
+  <div></div>;
 };
 
 export default ToastProvider;

@@ -11,7 +11,7 @@ type Props = {
   disabled?: boolean;
   classNames?: string;
   loading?: boolean;
-}
+};
 
 const TextButton = ({
   name,
@@ -19,16 +19,18 @@ const TextButton = ({
   disabled = false,
   classNames = '',
   loading = false,
-  children
+  children,
 }: Props) => {
   return (
-    <button className={cn('container', classNames)} disabled={disabled} onClick={onClick}>
-      <span className={cn('text')}>
-        {name}
-      </span>
+    <button
+      className={cn('container', classNames)}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      <span className={cn('text')}>{name}</span>
       {children}
     </button>
-  )
+  );
 };
 
 export default TextButton;
