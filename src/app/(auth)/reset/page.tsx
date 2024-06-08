@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ResetPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default ResetPage
+export default ResetPage;

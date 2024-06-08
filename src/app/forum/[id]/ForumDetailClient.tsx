@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ForumDetailClient = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default ForumDetailClient
+export default ForumDetailClient;
