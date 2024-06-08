@@ -5,9 +5,16 @@ import Footer from '@/layout/footer/Footer';
 import { usePathname } from 'next/navigation';
 import NavBar from '@/layout/navBar/NavBar';
 import SideBar from '@/layout/sideBar/SideBar';
+import { useSelector } from 'react-redux';
+import { getToast } from '@/state/slice/toastSlice';
+import { getMessage } from '@/state/slice/messageSlice';
+import ToastCard from '@/components/card/toastCard/ToastCard';
+import MessageCard from '@/components/card/messageCard/MessageCard';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
+  const toastInfo = useSelector(getToast)
+  const messageInfo = useSelector(getMessage)
 
   const showHeader = useMemo(() => {
     if (
@@ -53,6 +60,18 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <Fragment>
       {showHeader && <Header />}
       {children}
+      {toastInfo.toast && (
+        <ToastCard
+          text={toastInfo.toast.text}
+          direction={toastInfo.toast.direction}
+        />
+      )}
+      {messageInfo.message && (
+        <MessageCard
+          title={messageInfo.message.title}
+          subTitle={messageInfo.message.subTitle}
+        />
+      )}
       {showNavBar && <NavBar />}
       {showSideBar && <SideBar />}
       {showFooter && <Footer />}
