@@ -2,10 +2,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import modalSlice from '@/state/slice/modalSlice';
 import sideSlice from '@/state/slice/sideSlice';
+import toastSlice from '@/state/slice/toastSlice'
+import messageSlice from '@/state/slice/messageSlice';
 
 const rootReducer = combineReducers({
   modal: modalSlice,
   side: sideSlice,
+  toast: toastSlice,
+  message: messageSlice,
 });
 
 const store = configureStore({
