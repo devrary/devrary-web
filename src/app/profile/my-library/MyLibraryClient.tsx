@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const MyLibraryClient = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default MyLibraryClient
+export default MyLibraryClient;

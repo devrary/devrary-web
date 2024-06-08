@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import '@/styles/globals.scss';
-import { Session } from "next-auth";
-import NextAuthProvider from "@/provider/NextAuthProvider";
-import ReduxProvider from "@/provider/ReduxProvider";
-import BaseProvider from "@/provider";
+import { Session } from 'next-auth';
+import NextAuthProvider from '@/provider/NextAuthProvider';
+import ReduxProvider from '@/provider/ReduxProvider';
+import BaseProvider from '@/provider';
 
 export const viewport = {
   width: 'device-width',
@@ -11,8 +11,8 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Devrary",
-  description: "Welcome to Devrary.",
+  title: 'Devrary',
+  description: 'Welcome to Devrary.',
 };
 
 export default function RootLayout({

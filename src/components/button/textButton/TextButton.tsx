@@ -1,15 +1,34 @@
-import React from 'react'
-import styles from '@/components/button/textButton/TextButton.module.scss'
-import classNames from 'classnames/bind'
+import React, { ReactNode } from 'react';
+import styles from '@/components/button/textButton/TextButton.module.scss';
+import classNames from 'classnames/bind';
 
-const cn = classNames.bind(styles)
+const cn = classNames.bind(styles);
 
-const TextButton = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+type Props = {
+  name: string;
+  onClick: () => void;
+  children?: ReactNode;
+  disabled?: boolean;
+  classNames?: string;
+  loading?: boolean;
 }
 
-export default TextButton
+const TextButton = ({
+  name,
+  onClick,
+  disabled = false,
+  classNames = '',
+  loading = false,
+  children
+}: Props) => {
+  return (
+    <button className={cn('container', classNames)} disabled={disabled} onClick={onClick}>
+      <span className={cn('text')}>
+        {name}
+      </span>
+      {children}
+    </button>
+  )
+};
+
+export default TextButton;

@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const UserDetailClientPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default UserDetailClientPage
+export default UserDetailClientPage;

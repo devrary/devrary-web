@@ -1,13 +1,8 @@
-import React from 'react'
-import styles from '@/app/page.module.scss'
-import classNames from 'classnames/bind'
-
-const cn = classNames.bind(styles)
+import React from 'react';
+import HomeClientPage from '@/app/HomeClientPage';
 
 const HomePage = () => {
-  return (
-    <main></main>
-  )
-}
+  return <HomeClientPage />;
+};
 
-export default HomePage
+export default HomePage;

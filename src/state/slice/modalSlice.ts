@@ -36,8 +36,7 @@ const modalSlice = createSlice({
   },
 });
 
-export const { OPEN_MODAL, CLOSE_MODAL, CHANGE_MODAL } =
-  modalSlice.actions;
+export const { OPEN_MODAL, CLOSE_MODAL, CHANGE_MODAL } = modalSlice.actions;
 
 export const getModal = (state: RootState) => state.modal.name;
 export const getModalState = (state: RootState) => state.modal;

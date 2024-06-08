@@ -1,1 +1,1 @@
-export type ModalType = 'CreateLogModal'
+export type ModalType = 'CreateLogModal';
