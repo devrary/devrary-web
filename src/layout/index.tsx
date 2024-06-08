@@ -10,22 +10,42 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
 
   const showHeader = useMemo(() => {
-    if (pathname === '/login' || pathname === '/signup' || pathname === '/reset') return false;
+    if (
+      pathname === '/login' ||
+      pathname === '/signup' ||
+      pathname === '/reset'
+    )
+      return false;
     return true;
   }, [pathname]);
 
   const showFooter = useMemo(() => {
-    if (pathname === '/login' || pathname === '/signup' || pathname === '/reset') return false;
+    if (
+      pathname === '/login' ||
+      pathname === '/signup' ||
+      pathname === '/reset'
+    )
+      return false;
     return true;
   }, [pathname]);
 
   const showNavBar = useMemo(() => {
-    if (pathname === '/login' || pathname === '/signup' || pathname === '/reset') return false;
+    if (
+      pathname === '/login' ||
+      pathname === '/signup' ||
+      pathname === '/reset'
+    )
+      return false;
     return true;
   }, [pathname]);
 
   const showSideBar = useMemo(() => {
-    if (pathname === '/login' || pathname === '/signup' || pathname === '/reset') return false;
+    if (
+      pathname === '/login' ||
+      pathname === '/signup' ||
+      pathname === '/reset'
+    )
+      return false;
     return true;
   }, [pathname]);
 

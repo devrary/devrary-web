@@ -16,7 +16,7 @@ import AutoSignInCheckbox from '@/widget/checkbox/autoSignInCheckbox/AutoSignInC
 import { AUTO_SIGNIN_MESSAGE } from '@/constants/strings';
 import BaseDivider from '@/components/divider/baseDivider/BaseDivider';
 import TextButton from '@/components/button/textButton/TextButton';
-import ArrowRightIcon from '@/assets/icons/arrow-right.svg'
+import ArrowRightIcon from '@/assets/icons/arrow-right.svg';
 
 const cn = classNames.bind(styles);
 
@@ -98,7 +98,7 @@ const LoginClientPage = () => {
               orientation={'top'}
             />
             <TextButton
-              name='비밀번호 수정'
+              name="비밀번호 수정"
               onClick={() => router.push('/reset')}
             >
               <ArrowRightIcon viewBox="0 0 1024 1024" className={cn('icon')} />
@@ -107,7 +107,11 @@ const LoginClientPage = () => {
           <div className={cn('button-container')}>
             <BaseButton name="로그인" type={'fill'} onClick={() => {}} />
             <BaseDivider />
-            <BaseButton name="회원가입" type={'outline'} onClick={() => router.push('/signup')} />
+            <BaseButton
+              name="회원가입"
+              type={'outline'}
+              onClick={() => router.push('/signup')}
+            />
             <BaseDivider />
           </div>
         </form>
