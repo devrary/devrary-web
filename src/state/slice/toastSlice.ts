@@ -2,19 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from '@/state/store'
 
 export interface IToastState {
+  toastId: number;
   autoClose: {
     duration: number;
-  } | null;
+  }
   toast: {
     direction: 'top' | 'right' | 'bottom';
     text: string;
-  } | null;
+  }
 }
 
-const initialState: IToastState = {
-  autoClose: null,
-  toast: null
-}
+const initialState: IToastState[] = [];
 
 const toastSlice = createSlice({
   name: 'toast',
@@ -23,12 +21,21 @@ const toastSlice = createSlice({
     CREATE_TOAST: (state, action) => {
       const { autoClose, toast } = action.payload;
     
-      state.autoClose = autoClose;
-      state.toast = toast;
+      const newState: IToastState = {
+        toastId: state.length,
+        autoClose: autoClose,
+        toast: toast
+      }
+      state.push(newState)
     },
-    CLOSE_TOAST: (state) => {
-      state.autoClose = null
-      state.toast = null;
+    CLOSE_TOAST: (state, action) => {
+      const { toastId } = action.payload;
+
+      const _state = state.filter((item: IToastState) => {
+        return item.toastId !== toastId
+      })
+
+      state = [..._state];
     }
   }
 })

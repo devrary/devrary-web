@@ -2,36 +2,37 @@ import React, { useCallback, useEffect, useState } from 'react'
 import styles from '@/components/card/toastCard/ToastCard.module.scss'
 import classNames from 'classnames/bind'
 import XIcon from '@/assets/icons/x.svg'
-import { useDispatch, useSelector } from 'react-redux'
-import { CLOSE_TOAST, getToast } from '@/state/slice/toastSlice'
+import { useDispatch } from 'react-redux'
+import { CLOSE_TOAST } from '@/state/slice/toastSlice'
 
 const cn = classNames.bind(styles)
 
 type Props = {
+  toastId: number;
+  autoClose: { duration: number };
   text: string;
   direction: 'top' | 'right' | 'bottom';
 }
 
-const ToastCard = ({ text, direction }: Props) => {
-  const toastInfo = useSelector(getToast)
+const ToastCard = ({ text, direction, autoClose, toastId }: Props) => {
   const [hide, setHide] = useState<boolean>(false);
   const dispatch = useDispatch()
 
   const handleClose = useCallback(() => {
     setHide(true);
     setTimeout(() => {
-      dispatch(CLOSE_TOAST());
+      dispatch(CLOSE_TOAST({ toastId }));
     }, 1000);
-  }, []);
+  }, [toastId]);
 
 
   useEffect(() => {
-    if (toastInfo.autoClose && toastInfo.toast) {
+    if (autoClose) {
       setTimeout(() => {
         handleClose()
-      }, toastInfo.autoClose.duration)
+      }, autoClose.duration)
     }
-  }, [toastInfo])
+  }, [autoClose, toastId])
   
   return (
     <section className={cn('container', `container-${direction}`, hide && `container-${direction}-hide`)}>
