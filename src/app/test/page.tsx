@@ -30,11 +30,29 @@ const TestPage = () => {
         dispatch(CREATE_TOAST({
           autoClose: null,
           toast: {
+            direction: 'top',
+            text: "Hello, World, Hello, World, Hello, World, Hello, World"
+          }
+        }))
+      }}>Open Toast Top</button>
+      <button onClick={() => {
+        dispatch(CREATE_TOAST({
+          autoClose: { duration: 3000 },
+          toast: {
             direction: 'bottom',
             text: "Hello, World, Hello, World, Hello, World, Hello, World"
           }
         }))
-      }}>Open Toast</button>
+      }}>Open Toast Bottom</button>
+      <button onClick={() => {
+        dispatch(CREATE_TOAST({
+          autoClose: { duration: 3000 },
+          toast: {
+            direction: 'right',
+            text: "Hello, World, Hello, World, Hello, World, Hello, World"
+          }
+        }))
+      }}>Open Toast Right</button>
     </main>
   )
 }
