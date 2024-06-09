@@ -17,10 +17,10 @@ type Props = {
 };
 
 const TrendingListCard = ({ title, queryParams }: Props) => {
-  const { data, isLoading, error } = useQuery({
-    queryKey: [QUERY_KEY.GET_TRENDING, queryParams],
-    queryFn: () => {},
-  });
+  // const { data, isLoading, error } = useQuery({
+  //   queryKey: [QUERY_KEY.GET_TRENDING, queryParams],
+  //   queryFn: () => {},
+  // });
 
   const renderIcon = useCallback(() => {
     switch (queryParams) {

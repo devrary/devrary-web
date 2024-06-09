@@ -1,0 +1,53 @@
+.container {
+  width: 100%;
+
+  .title-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  .search-container {
+    display: flex;
+    align-items: flex-start;
+    justify-tracks: space-between;
+
+    .book-container {
+      margin-left: 4rem;
+    }
+  }
+
+  .bullet-container {
+    flex-shrink: 1;
+    margin-top: 4rem;
+    margin-bottom: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .bullet-text {
+      font-size: 1rem;
+      border: 1px solid var(--PRIMARY-OPACITY-4);
+      padding: .4rem .8rem;
+      text-align: start;
+      color: var(--PRIMARY);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: .2rem;
+      }
+    }
+  }
+}

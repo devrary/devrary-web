@@ -6,6 +6,7 @@ import useOnClickOutside from '@/hooks/useOnClick';
 import { useDispatch } from 'react-redux';
 import { CLOSE_MODAL } from '@/state/slice/modalSlice';
 import CloseModalButton from '@/widget/button/closeModalButton/CloseModalButton';
+import SearchBoard from '@/widget/searchBoard/SearchBoard';
 
 const cn = classNames.bind(styles);
 
@@ -33,7 +34,9 @@ const CreateLogModal = ({ params }: Props) => {
   return (
     <BaseModal type={'dark'}>
       <div className={cn('container')} ref={bodyRef}>
-        <div className={cn('inner')}></div>
+        <div className={cn('inner')}>
+          <SearchBoard />
+        </div>
         <CloseModalButton onClick={closeModal} />
       </div>
     </BaseModal>

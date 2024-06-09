@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import NavBar from '@/layout/navBar/NavBar';
 import SideBar from '@/layout/sideBar/SideBar';
 import { useSelector } from 'react-redux';
-import { getToast } from '@/state/slice/toastSlice';
+import { getToast, IToastState } from '@/state/slice/toastSlice';
 import { getMessage } from '@/state/slice/messageSlice';
 import ToastCard from '@/components/card/toastCard/ToastCard';
 import MessageCard from '@/components/card/messageCard/MessageCard';
@@ -15,6 +15,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
   const toastInfo = useSelector(getToast)
   const messageInfo = useSelector(getMessage)
+
+  console.log("toastInfo", toastInfo)
 
   const showHeader = useMemo(() => {
     if (
@@ -60,12 +62,19 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <Fragment>
       {showHeader && <Header />}
       {children}
-      {toastInfo.toast && (
-        <ToastCard
-          text={toastInfo.toast.text}
-          direction={toastInfo.toast.direction}
-        />
-      )}
+      {toastInfo.length && 
+        toastInfo.map((toast: IToastState) => {
+          return (
+            <ToastCard
+              key={toast.toastId}
+              toastId={toast.toastId}
+              autoClose={toast.autoClose}
+              text={toast.toast.text}
+              direction={toast.toast.direction}
+            />
+          )
+        })
+      }
       {messageInfo.message && (
         <MessageCard
           title={messageInfo.message.title}
